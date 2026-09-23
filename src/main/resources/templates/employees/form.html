@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Departments</title>
+</head>
+<body>
+<h1>Add Employee to
+  <span th:text="${department.name}"></span></h1>
+
+<form th:action="@{/departments/{departmentId}/employees(departmentId=${department.id})}"
+      th:object="${employee}" method="post">
+  <div>
+    <label >Name</label>
+    <input type="text" th:field="*{name}">
+  </div>
+  <br>
+  <div>
+    <label >Email</label>
+    <input type="text" th:field="*{email}">
+  </div>
+  <br>
+  <div>
+    <label >Designation</label>
+    <input type="text" th:field="*{designation}">
+  </div>
+  <br>
+  <button type="submit">Save Employee</button>
+</form>
+<br>
+<a th:href="@{/departments}">Go Back</a>
+</body>
+</html>

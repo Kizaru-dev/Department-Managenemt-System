@@ -14,6 +14,7 @@
    <th>ID</th>
    <th>Name</th>
    <th>Description</th>
+     <th>Action</th>
  </tr>
  </thead>
   <tbody>
@@ -21,6 +22,11 @@
     <td th:text="${department.id}"></td>
     <td th:text="${department.name}"></td>
     <td th:text="${department.description}"></td>
+      <td>
+          <a th:href="@{/departments/{departmentId}/employees/new(departmentId=${department.id})}">
+              Add Employee
+          </a>
+      </td>
   </tr>
   </tbody>
 </table>
